@@ -26,5 +26,10 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
+        Car clio = new Car();
+        clio.mark = "Renault";
+        clio.model = "Clio";
+        clio.madeYear = 2020;
+        me.myCar=clio;
     }
 }
