@@ -28,6 +28,7 @@ public class Animal {
         }
     }
 
+
     public void feed() {
         if(weight > 0){
             this.weight += 1;

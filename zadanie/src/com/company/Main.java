@@ -13,7 +13,6 @@ public class Main {
         System.out.println("producer = " + iphone.producer);
         System.out.println("name = " + dog.name);
 
-
         Human me = new Human();
         me.mobilePhone = iphone;
 
