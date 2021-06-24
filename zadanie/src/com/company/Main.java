@@ -1,6 +1,5 @@
 package com.company;
 
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Main {
@@ -32,23 +31,13 @@ public class Main {
         clio.mark = "Renault";
         clio.model = "Clio";
         clio.madeYear = 2020;
-        me.myCar=clio;
 
-        LocalDateTime data = LocalDateTime.now();
-            double salary = me.getSalary();
-            System.out.println("\nData pobrania wysokosci pensji: " + data +"\nWysokosc pensji:" +salary);
-
+        System.out.println(me.getSalary());
         System.out.println("Podaj nowa pensje:");
         double newSalary = scanner.nextDouble();
-        if (newSalary<0){
-            System.out.println("Wartosc wyplaty nie moze byc ujemna!");
-        }
-        else {
-            System.out.println("Nowe dane zostaly wyslane do systemu ksiegowego.");
-            System.out.println("Prosze odebrac aneks umowy od Pani Hani z kadr.");
-            System.out.println("ZUS i US juz wiedza o zmianie wypaty wiec nie ma sensu ukrywac dochodu.");
-            me.setSalary(newSalary);
-        }
-        System.out.println("\nData pobrania wysokosci pensji: " + data +"\nWysokosc pensji:" +me.getSalary());
+        me.setSalary(newSalary);
+        System.out.println(me.getSalary());
+
+
     }
 }
