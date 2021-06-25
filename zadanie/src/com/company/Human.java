@@ -11,11 +11,16 @@ public class Human {
 
     Phone mobilePhone;
     Animal pet;
-    Car myCar;
+
     private Double salary=2500.00;
     LocalDateTime data = LocalDateTime.now();
-    public String getSalary(){
+    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000.0);
+
+    public String getSSalary(){
         return "\nCzas pobrania danych: "+data+"\nAktualna pensja: "+salary;
+    }
+    public double getSalary(){
+        return salary;
     }
 
     public void setSalary(double newSalary) {
@@ -29,5 +34,20 @@ public class Human {
             salary=newSalary;
 
         }
+    }
+    public String getCar(){
+        return "Marka: " + myNewCar.mark + "\nModel: " + myNewCar.model+"\nRok wydania: "+myNewCar.madeYear+"\nWartość:"+myNewCar.value;
+    }
+
+    public void setCar(Car myCar){
+        if(myNewCar.value<getSalary()){
+            System.out.println("Udalo sie kupic samochod za gotowke");
+            myNewCar=myCar;
+        }
+        else if(myNewCar.value/12<getSalary()){
+            System.out.println("Udalo sie kupic samochod na kredyt");
+            myNewCar=myCar;
+        }
+        else System.out.println("Idź po podwyzke, a potem mysl o kupnie samochodu!");
     }
 }

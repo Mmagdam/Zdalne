@@ -17,6 +17,7 @@ public class Main {
 
         Human me = new Human();
         me.mobilePhone = iphone;
+
         dog.feed();
         dog.feed();
         dog.takeForAWalk();
@@ -27,17 +28,16 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
-        Car clio = new Car();
-        clio.mark = "Renault";
-        clio.model = "Clio";
-        clio.madeYear = 2020;
+        Car myCar= new Car(null, null, null, 0.0);
 
-        System.out.println(me.getSalary());
+        System.out.println(me.getSSalary());
         System.out.println("Podaj nowa pensje:");
         double newSalary = scanner.nextDouble();
         me.setSalary(newSalary);
-        System.out.println(me.getSalary());
+        System.out.println(me.getSSalary());
 
+        me.setCar(myCar);
+        System.out.println("Samochod:\n" +me.getCar());
 
     }
 }
