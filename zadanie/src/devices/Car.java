@@ -1,18 +1,26 @@
 package devices;
 
-public class Car extends Device{
+import com.company.sellable;
+
+public class Car extends Device implements sellable {
     public String mark;
 
     public Integer madeYear;
     public Integer value;
 
 
-    public Car(String mark, String model, Integer madeYear, Integer value) {
+    public Car(String mark, String model, Integer madeYear, Integer value, Double price) {
         this.mark = mark;
         this.model = model;
         this.madeYear = madeYear;
         this.value = value;
+        this.price = price;
     }
+
+    public Car() {
+
+    }
+
     @Override
     public boolean equals(Object other) {
         if(other instanceof Car){
@@ -41,4 +49,6 @@ public class Car extends Device{
     public void turnOn() {
 
     }
+
+
 }

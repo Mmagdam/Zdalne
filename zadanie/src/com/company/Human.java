@@ -7,17 +7,29 @@ import devices.Phone;
 import java.time.LocalDateTime;
 
 public class Human {
-    String firstName;
-    String lastName;
-    Integer age;
-    String sex;
+    public String firstName;
+    public String lastName;
+    public Integer age;
+    public String sex;
+    public double cash;
+    public Phone mobilePhone;
+    public Animal pet;
+    public Car myCar;
+    public Human(String firstName, String lastName, Integer age, String sex, double cash, Phone mobilePhone, Animal pet, Car myCar) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.age=age;
+        this.cash=cash;
+        this.mobilePhone=mobilePhone;
+        this.pet=pet;
+        this.myCar=myCar;
+    }
 
-    Phone mobilePhone;
-    Animal pet;
+    double price;
 
     private Double salary=2500.00;
     LocalDateTime data = LocalDateTime.now();
-    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000);
+    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000, 5000.0);
 
     public String getSSalary(){
         return "\nCzas pobrania danych: "+data+"\nAktualna pensja: "+salary;
@@ -64,8 +76,7 @@ public class Human {
                 ", mobilePhone=" + mobilePhone +
                 ", pet=" + pet +
                 ", salary=" + salary +
-                ", data=" + data +
-                ", myNewCar=" + myNewCar +
+                ", myCar=" + myCar +
                 '}';
     }
 }

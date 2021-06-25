@@ -2,11 +2,21 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
-    final String species;
+public class Animal implements sellable {
+
+    public String species;
     public String name;
     private Double weight;
     File pic;
+    public Double price;
+
+    public Animal(String species, String name, Double weight, File pic, double price) {
+        this.species=species;
+        this.name=name;
+        this.weight=weight;
+        this.pic=pic;
+        this.price=price;
+    }
 
     static public final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
@@ -28,6 +38,10 @@ public class Animal {
         }
     }
 
+    public Animal() {
+
+    }
+
 
     public void feed() {
         if(weight > 0){
@@ -47,6 +61,19 @@ public class Animal {
         }
     }
 
+    public void Sell(Human seller, Human buyer, Double price){
+        if (seller.pet!=null) {
+            if(buyer.cash>=seller.pet.price) {
+                buyer.cash= buyer.cash-seller.pet.price;
+                seller.cash= seller.cash+seller.pet.price;
+                buyer.pet=seller.pet;
+                seller.pet=null;
+                System.out.println("Transakcja sprzedazy zwierzaka zostala dokonana!");
+            }
+            System.out.println("Kupujacy nie ma wystarczajaco duzo pieniedzy");
+        };
+    }
+
     @Override
     public String toString() {
         return "Animal{" +
@@ -56,4 +83,6 @@ public class Animal {
                 ", pic=" + pic +
                 '}';
     }
+
+
 }
