@@ -1,15 +1,18 @@
 package com.company;
 
+import creatures.Pet;
 import devices.Car;
 import devices.Phone;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Animal dog = new Animal("dog");
+        Pet dog = new Pet("dog", null, null, 1000.0);
         dog.name = "Puszek";
+        dog.weight = 20.0;
         dog.feed();
 
         Phone iphone = new Phone("apple", "S6", "iOS", 4.5, 1500.0);
@@ -55,7 +58,7 @@ public class Main {
         System.out.println("Kupujacy przed transakcja:" + buyer);
 
 
-        System.out.println("Wybierz co chcesz sprzedac! \n1-telefon\n2-samochod\n3-zwierzaka\n4-człowieka");
+        System.out.println("Wybierz co chcesz sprzedac! \n1-telefon\n2-samochod\n3-zwierzaka\n4-czlowieka");
         int n = scanner.nextInt();
         switch(n){
             case 1:
@@ -74,19 +77,19 @@ public class Main {
                 break;
             case 3:
                 if (seller.pet!=null) {
-                    sellable sellPhone = new Animal();
+                    sellable sellPet = new Pet(null, null, null, null);
                     sellable.sell(seller, buyer, seller.pet.price);
                 }
                 else System.out.println("Brak zwierzat na sprzedaz");
                 break;
             case 4:
-                System.out.println("Handel ludźmi jest niemożliwy!");
+                System.out.println("Handel ludzmi jest niemozliwy!");
                 break;
             default:
                 System.out.println("Wybrales zla opcje!");
         }
 
-        System.out.println("\n\nSprzedajacy po transakcja:" + seller);
-        System.out.println("Kupujacy po transakcja:" + buyer);
+        System.out.println("\n\nSprzedajacy po transakcji:" + seller);
+        System.out.println("Kupujacy po transakcji:" + buyer);
     }}
 

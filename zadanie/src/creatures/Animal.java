@@ -1,26 +1,25 @@
-package com.company;
+package creatures;
 
-import java.io.File;
+import com.company.Human;
+import com.company.sellable;
 
-public class Animal implements sellable {
+public abstract class Animal implements sellable, Feedable{
 
     public String species;
     public String name;
-    private Double weight;
-    File pic;
+    public Double weight;
     public Double price;
 
-    public Animal(String species, String name, Double weight, File pic, double price) {
+    public Animal(String species, String name, Double weight, double price) {
         this.species=species;
         this.name=name;
         this.weight=weight;
-        this.pic=pic;
         this.price=price;
     }
 
     static public final Double DEFAULT_ANIMAL_WEIGHT = 1.0;
 
-    Animal(String species) {
+    public Animal() {
         this.species = species;
 
         switch (this.species) {
@@ -38,8 +37,7 @@ public class Animal implements sellable {
         }
     }
 
-    public Animal() {
-
+    public Animal(String species, String name, Double weight, Double price) {
     }
 
 
@@ -80,7 +78,6 @@ public class Animal implements sellable {
                 "species='" + species + '\'' +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
-                ", pic=" + pic +
                 '}';
     }
 
