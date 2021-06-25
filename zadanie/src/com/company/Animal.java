@@ -46,4 +46,14 @@ public class Animal {
             System.out.println("U CANNOT WALK THE STREET WITH DEAD ANIMAL IDIOT!");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", pic=" + pic +
+                '}';
+    }
 }

@@ -1,6 +1,9 @@
 package com.company;
 
 
+import devices.Car;
+import devices.Phone;
+
 import java.time.LocalDateTime;
 
 public class Human {
@@ -14,7 +17,7 @@ public class Human {
 
     private Double salary=2500.00;
     LocalDateTime data = LocalDateTime.now();
-    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000.0);
+    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000);
 
     public String getSSalary(){
         return "\nCzas pobrania danych: "+data+"\nAktualna pensja: "+salary;
@@ -42,12 +45,27 @@ public class Human {
     public void setCar(Car myCar){
         if(myNewCar.value<getSalary()){
             System.out.println("Udalo sie kupic samochod za gotowke");
-            myNewCar=myCar;
+            myCar=myNewCar;
         }
         else if(myNewCar.value/12<getSalary()){
             System.out.println("Udalo sie kupic samochod na kredyt");
-            myNewCar=myCar;
+            myCar=myNewCar;
         }
         else System.out.println("Idź po podwyzke, a potem mysl o kupnie samochodu!");
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                ", mobilePhone=" + mobilePhone +
+                ", pet=" + pet +
+                ", salary=" + salary +
+                ", data=" + data +
+                ", myNewCar=" + myNewCar +
+                '}';
     }
 }
