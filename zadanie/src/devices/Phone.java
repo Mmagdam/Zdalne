@@ -1,8 +1,7 @@
 package devices;
 
-public class Phone {
-    public String producer;
-    public String model;
+public class Phone extends Device{
+
     public String operationSystem;
     public Double screenSize;
 
@@ -24,4 +23,8 @@ public class Phone {
         return "4.23.1";
     }
 
+    @Override
+    public void turnOn() {
+
+    }
 }

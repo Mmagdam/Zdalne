@@ -1,8 +1,8 @@
 package devices;
 
-public class Car {
+public class Car extends Device{
     public String mark;
-    public String model;
+
     public Integer madeYear;
     public Integer value;
 
@@ -35,5 +35,10 @@ public class Car {
                 ", madeYear=" + madeYear +
                 ", value=" + value +
                 '}';
+    }
+
+    @Override
+    public void turnOn() {
+
     }
 }
