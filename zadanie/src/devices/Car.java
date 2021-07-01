@@ -2,7 +2,7 @@ package devices;
 
 import com.company.sellable;
 
-public class Car extends Device implements sellable {
+public abstract class Car extends Device implements sellable {
     public String mark;
 
     public Integer madeYear;
@@ -18,8 +18,8 @@ public class Car extends Device implements sellable {
     }
 
     public Car() {
-
     }
+    public abstract void refuel();
 
     @Override
     public boolean equals(Object other) {

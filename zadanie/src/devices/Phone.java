@@ -18,6 +18,23 @@ public class Phone extends Device implements sellable {
     public Phone() {
 
     }
+    public void installAnnApp1 (String nazwa){
+    }
+    public void installAnnApp2 (String nazwa, String wersja){
+    }
+    public void installAnnApp3 (String nazwa, String wersja, String adresSerwera){
+    }
+    public void installAnnApp4 (String lista){
+    }
+    public void installAnnApp5 (URL obiekt){
+    }
+
+    static final String domyslnyAdres = "https://play.google.com/store";
+    static final String domyslnaWersja = "1.0";
+    static final String domyslnyProtokol = "4200";
+
+
+
 
     public String toString() {
         return "Phone{" +

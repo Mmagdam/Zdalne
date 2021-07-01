@@ -30,7 +30,12 @@ public class Human {
 
     private Double salary=2500.00;
     LocalDateTime data = LocalDateTime.now();
-    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000, 5000.0);
+    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000, 5000.0) {
+        @Override
+        public void refuel() {
+
+        }
+    };
 
     public String getSSalary(){
         return "\nCzas pobrania danych: "+data+"\nAktualna pensja: "+salary;

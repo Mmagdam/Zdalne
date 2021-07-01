@@ -33,9 +33,24 @@ public class Main {
         dog.takeForAWalk();
         dog.takeForAWalk();
 
-        Car myCar = new Car(null, null, null, 0, 0.0);
-        Car golf1 = new Car("Volkswagen", "Golf", 2010, 20000, 25000.0);
-        Car golf2 = new Car("Volkswagen", "Golf", 2010, 20000, 1500.0);
+        Car myCar = new Car(null, null, null, 0, 0.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
+        Car golf1 = new Car("Volkswagen", "Golf", 2010, 20000, 25000.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
+        Car golf2 = new Car("Volkswagen", "Golf", 2010, 20000, 1500.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
         System.out.println(me.getSSalary());
         System.out.println("Podaj nowa pensje:");
         double newSalary = scanner.nextDouble();
@@ -70,7 +85,12 @@ public class Main {
                 break;
             case 2:
                 if(seller.myCar!=null) {
-                    sellable sellPhone = new Car();
+                    sellable sellPhone = new Car() {
+                        @Override
+                        public void refuel() {
+
+                        }
+                    };
                     sellable.sell(seller, buyer, seller.myCar.price);
                     }
                 else System.out.println("Brak samochodow na sprzedaz");
