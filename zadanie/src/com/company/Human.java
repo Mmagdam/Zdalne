@@ -15,27 +15,43 @@ public class Human {
     public double cash;
     public Phone mobilePhone;
     public Animal pet;
-    public Car myCar;
-    public Human(String firstName, String lastName, Integer age, String sex, double cash, Phone mobilePhone, Animal pet, Car myCar) {
+    Car myNewCar= new Car("Renault", "Clio", 2020, 5000, 5000.0) {
+        @Override
+        public void refuel() {
+
+        }
+    };
+    public Car myCar= new Car("Renault", "Clio", 2020, 5000, 5000.0) {
+        @Override
+        public void refuel() {
+
+        }
+    };
+
+    public Car[] garage = new Car[2];
+
+    public Human(String firstName, String lastName, Integer age, String sex, double cash, Phone mobilePhone, Animal pet, Car garage[]) {
         this.firstName=firstName;
         this.lastName=lastName;
         this.age=age;
         this.cash=cash;
         this.mobilePhone=mobilePhone;
         this.pet=pet;
-        this.myCar=myCar;
+        this.garage=garage;
     }
 
+
     double price;
+    int rozmiarGarazu=garage.length;
+    public Human(String firstName, String lastName, int rozmiarGarazu) {
+
+    }
+
+
+
 
     private Double salary=2500.00;
     LocalDateTime data = LocalDateTime.now();
-    private Car myNewCar= new Car("Renault", "Clio", 2020, 5000, 5000.0) {
-        @Override
-        public void refuel() {
-
-        }
-    };
 
     public String getSSalary(){
         return "\nCzas pobrania danych: "+data+"\nAktualna pensja: "+salary;
@@ -60,7 +76,8 @@ public class Human {
         return "Marka: " + myNewCar.mark + "\nModel: " + myNewCar.model+"\nRok wydania: "+myNewCar.madeYear+"\nWartość:"+myNewCar.value;
     }
 
-    public void setCar(Car myCar){
+
+    public void setCar(Car myCar, int numerMiejsca){
         if(myNewCar.value<getSalary()){
             System.out.println("Udalo sie kupic samochod za gotowke");
             myCar=myNewCar;
@@ -82,7 +99,7 @@ public class Human {
                 ", mobilePhone=" + mobilePhone +
                 ", pet=" + pet +
                 ", salary=" + salary +
-                ", myCar=" + myCar +
+                ", garage=" + garage +
                 '}';
     }
 }

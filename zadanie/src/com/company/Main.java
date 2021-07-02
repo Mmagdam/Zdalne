@@ -39,7 +39,7 @@ public class Main {
 
             }
         };
-        Car golf1 = new Car("Volkswagen", "Golf", 2010, 20000, 25000.0) {
+        Car golf1 = new Car("Volkswagen", "Golf", 2011, 20000, 25000.0) {
             @Override
             public void refuel() {
 
@@ -51,13 +51,20 @@ public class Main {
 
             }
         };
+        Car clio = new Car("Renault", "Cilo", 2005, 2000, 1500.0) {
+            @Override
+            public void refuel() {
+
+            }
+        };
         System.out.println(me.getSSalary());
         System.out.println("Podaj nowa pensje:");
         double newSalary = scanner.nextDouble();
         me.setSalary(newSalary);
         System.out.println(me.getSSalary());
 
-        me.setCar(myCar);
+        int numer=0;
+        me.setCar(myCar, numer);
         System.out.println("Samochod:\n" + me.getCar());
         System.out.println("Czy oba samochody sa rowne:" + golf1.equals(golf2));
         System.out.println("Samochod 1:" + golf1);
@@ -65,9 +72,9 @@ public class Main {
         System.out.println("Czlowiek:" + me);
         System.out.println("Telefon:" + iphone);
         System.out.println("Zwierzak:" + dog);
-
+        Car[] garage = {golf1, clio, golf2};
         Phone xiaomi = new Phone("Xiaomi", "Redmi Note 7", "Android", 5.5, 1000.0);
-        Human seller = new Human("Jan", "Kowalski", 35, "mezczyzna", 50000.0, xiaomi, null, golf2);
+        Human seller = new Human("Jan", "Kowalski", 35, "mezczyzna", 50000.0, xiaomi, null, garage);
         Human buyer = new Human("Aleksandra", "Nowak", 28, "kobieta", 2000.0, null, null, null);
         System.out.println("\n\nSprzedajacy przed transakcja:" + seller);
         System.out.println("Kupujacy przed transakcja:" + buyer);
@@ -111,5 +118,6 @@ public class Main {
 
         System.out.println("\n\nSprzedajacy po transakcji:" + seller);
         System.out.println("Kupujacy po transakcji:" + buyer);
+
     }}
 

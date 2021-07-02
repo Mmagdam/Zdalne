@@ -12,6 +12,15 @@ public abstract class Device implements sellable {
     Scanner scanner = new Scanner(System.in);
     public abstract void turnOn();
 
+    public Double value(Car garage[] ){
+        Double suma=0.0;
+        for(int i=0; i<garage.length; i++){
+            suma =suma+garage[i].price;
+        }
+    return suma;
+    };
+
+
     public void Sell(Human seller, Human buyer, Double price){
         System.out.println("Wybierz czy chcesz sprzedac telefon-1, czy samochod-2:");
         int n = scanner.nextInt();
